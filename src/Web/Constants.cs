@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace Web
 {
-    public class Constants
+    public static class Constants
     {
         public const int ITEMS_PER_PAGE = 4;
+
+        public const string BASKET_COOKIENAME = "AnonId";
     }
 }
