@@ -17,5 +17,7 @@ namespace Web.Interfaces
         Task DeleteBasketAsync();
 
         Task DeleteBasketItemAsync(int basketItemId);
+
+        Task<BasketViewModel> SetQuantities(Dictionary<int, int> quantities);
     }
 }
