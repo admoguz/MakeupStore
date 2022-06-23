@@ -1,5 +1,4 @@
 ﻿using ApplicationCore.Entities;
-using ApplicationCore.Interfaces;
 using ApplicationCore.Specifications;
 using System;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationCore.Services
+namespace ApplicationCore.Interfaces
 {
     public class BasketService : IBasketService
     {
@@ -82,7 +81,7 @@ namespace ApplicationCore.Services
                 {
                     item.Quantity = quantities[item.Id];
                 }
-                catch (Exception) {}
+                catch (Exception) { }
             }
 
             await _basketRepo.UpdateAsync(basket);

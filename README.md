@@ -48,4 +48,6 @@ https://sweetalert2.github.io/#examples
 https://codepen.io/yigith/pen/XWZGwyJ
 
 https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/write?view=aspnetcore-5.0
+
+https://getbootstrap.com/docs/4.6/examples/checkout/
 ```
