@@ -14,7 +14,7 @@ namespace Infrastructure.Data.Config
         public void Configure(EntityTypeBuilder<OrderItem> builder)
         {
             builder.HasOne(x => x.Product)
-                .WithOne()
+                .WithMany()
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.Property(x => x.ProductName)

@@ -1,4 +1,6 @@
 ﻿using ApplicationCore.Entities;
+using ApplicationCore.Exceptions;
+using ApplicationCore.Interfaces;
 using ApplicationCore.Specifications;
 using System;
 using System.Collections.Generic;
@@ -6,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationCore.Interfaces
+namespace ApplicationCore.Services
 {
     public class BasketService : IBasketService
     {
@@ -72,7 +74,11 @@ namespace ApplicationCore.Interfaces
 
         public async Task<Basket> SetQuantities(string buyerId, Dictionary<int, int> quantities)
         {
-            var basket = await GetBasketAsync(buyerId);
+            if (quantities.Any(x => x.Value < 1))
+                throw new NonpositiveQuantityException();
+
+
+                var basket = await GetBasketAsync(buyerId);
             if (basket == null) return null;
 
             foreach (var item in basket.Items)
